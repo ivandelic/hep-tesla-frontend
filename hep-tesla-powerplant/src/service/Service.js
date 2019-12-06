@@ -1,19 +1,19 @@
 export class Service {
 
     constructor() {
-        this.baseUrl = "http://localhost:8080/";
+        this.baseUrl = process.env.REACT_APP_API_URL;
     }
 
     listPowerplants() {
-        return fetch(this.baseUrl + "powerplant-registry/powerplants").then(promise => promise.json())
+        return fetch(this.baseUrl + "/powerplant-registry/powerplants").then(promise => promise.json())
     }
 
     listRegions() {
-        return fetch(this.baseUrl + "powerplant-registry/regions").then(promise => promise.json())
+        return fetch(this.baseUrl + "/powerplant-registry/regions").then(promise => promise.json())
     }
 
     getPowerplant(id) {
-        return fetch(this.baseUrl + "powerplant-registry/powerplant/" + id).then(promise => promise.json())
+        return fetch(this.baseUrl + "/powerplant-registry/powerplant/" + id).then(promise => promise.json())
     }
 
     savePowerplant(item) {
@@ -28,7 +28,7 @@ export class Service {
     }
 
     updatePowerplant(item) {
-        return fetch(this.baseUrl + "powerplant-registry/powerplant", {
+        return fetch(this.baseUrl + "/powerplant-registry/powerplant", {
             method: 'POST',
             body: JSON.stringify(item),
             headers: {
@@ -38,7 +38,7 @@ export class Service {
     }
 
     createPowerplant(item) {
-        return fetch(this.baseUrl + "powerplant-registry/powerplant", {
+        return fetch(this.baseUrl + "/powerplant-registry/powerplant", {
             method: 'PUT',
             body: JSON.stringify(item),
             headers: {
@@ -48,7 +48,7 @@ export class Service {
     }
 
     deletePowerplant(id) {
-        return fetch(this.baseUrl + "powerplant-registry/powerplant/" + id, {
+        return fetch(this.baseUrl + "/powerplant-registry/powerplant/" + id, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json'

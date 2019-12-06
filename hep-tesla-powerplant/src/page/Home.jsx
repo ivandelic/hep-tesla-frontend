@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {Service} from '../service/Service'
+import { Card } from 'primereact/card';
 
 class Home extends Component {
     constructor(props) {
@@ -9,9 +10,12 @@ class Home extends Component {
 
     render() {
         return (
-            <div className="p-grid">
-                <div className="p-col-12 p-md-6 p-lg-3">
-                </div>
+            <div className="p-grid p-justify-center p-align-center max-height">
+                <Card title="Home" className="p-col-12 p-md-6 p-lg-6">
+                    <div className="p-col-12">
+                        API URL: {process.env.REACT_APP_API_URL}
+                    </div>
+                </Card>
             </div>
         );
     }

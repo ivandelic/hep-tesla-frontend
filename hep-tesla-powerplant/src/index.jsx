@@ -15,10 +15,10 @@ import 'primeicons/primeicons.css';
 
 ReactDOM.render(
     <BrowserRouter>
-        <div className="tesla">
+        <div className="tesla max-height">
             <TopMenu></TopMenu>
             <SideMenu></SideMenu>
-            <div className="tesla-wrapper">
+            <div className="tesla-wrapper max-height">
                 <Route path="/" exact component={Home}></Route>
                 <Route path="/powerplant" component={Powerplant}></Route>
                 <Route path="/region" component={Powerplant}></Route>
