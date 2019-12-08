@@ -6,7 +6,7 @@ class TopMenu extends Component {
         return (
             <nav className="tesla-bar tesla-bar-top">
                 <h1 className="tesla-headline tesla-pull-left">Tesla Microservices</h1>
-                <ul className="tesla-menu tesla-menu-icon tesla-menu-icon-horizontal tesla-pull-right">
+                <ul className="tesla-menu tesla-menu-icon tesla-menu-icon-horizontal">
                     <li>
                         <Link to="/">
                             <span className="pi fa-fw pi-user"></span>

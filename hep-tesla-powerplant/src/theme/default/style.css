@@ -77,7 +77,8 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 101; }
   .tesla .tesla-bar.tesla-bar-top h1.tesla-headline {
     margin: 0.3em 2.5em;
-    color: #ffffff; }
+    color: #ffffff;
+    white-space: nowrap; }
   .tesla .tesla-bar.tesla-bar-top .tesla-menu-icon a {
     color: #ffffff; }
   .tesla .tesla-bar.tesla-bar-top .tesla-menu-icon a:hover {
@@ -121,7 +122,10 @@ h1, h2, h3, h4, h5, h6 {
   .tesla .tesla-menu.tesla-menu-icon a:hover {
     background-color: #edf0f5; }
   .tesla .tesla-menu.tesla-menu-icon.tesla-menu-icon-horizontal {
-    padding: 0 5px; }
+    background-color: #0679ae;
+    padding: 0 5px;
+    position: absolute;
+    right: 0; }
     .tesla .tesla-menu.tesla-menu-icon.tesla-menu-icon-horizontal > li {
       float: left; }
   .tesla .tesla-menu.tesla-menu-icon.tesla-menu-icon-vertical {
