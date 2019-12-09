@@ -1,0 +1,48 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: tesla-frontend-service
+  labels:
+    app: tesla-frontend
+spec:
+  type: LoadBalancer
+  selector:
+    app: tesla-frontend
+  ports:
+    -
+      port: 80
+      targetPort: 3000
+      name: http
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: tesla-frontend-deployment
+  labels:
+    app: tesla-frontend
+spec:
+  selector:
+    matchLabels:
+      app: tesla-frontend
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: tesla-frontend
+        version: v1
+    spec:
+      containers:
+        -
+          name: tesla-frontend
+          image: 'eu-frankfurt-1.ocir.io/oraseemeaceeociworkshop/ivandelic/hep/tesla-frontend:latest'
+          imagePullPolicy: Always
+          ports:
+            -
+              containerPort: 3000
+          env:
+            -
+              name: REACT_APP_API_URL
+              value: http://tesla-backend.ivandelic.com
+      imagePullSecrets:
+        -
+          name: ocirsecret
